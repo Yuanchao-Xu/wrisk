@@ -10,6 +10,8 @@ coalStock = {'Shenhua':'601088.SS',
              'Yanzhou':'600188.SS',
              'Yitai':'900948.SS'}
 
+ls = ['601088.SS','601898.SS', '601001.SS', '600188.SS', '900948.SS']
+
 stockInfo = DataReader(list(coalStock.values()),  'yahoo', datetime(2010,1,1), datetime(2015,1,1))
 
 filePath = 'C://Users//User\Desktop//test.txt'
@@ -17,5 +19,7 @@ filePath = 'C://Users//User\Desktop//test.txt'
 
 # stockInfo contains 3 dimension, the last one is for different companies.
 # write those to txt, in order to copy to excel
-stockInfo[:,:,0].to_csv(filePath)
+# stockInfo[:,:,1].to_frame()
+
+stockInfo[:,:,4].to_csv(filePath)
 print(stockInfo)
